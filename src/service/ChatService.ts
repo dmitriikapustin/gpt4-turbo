@@ -46,8 +46,7 @@ export class ChatService {
         const requestBody = {
             model: modelId,
             messages: messagesWithoutMessageType,
-            temperature: CHAT_PARAMETERS.temperature,
-            max_tokens: 1000
+            temperature: CHAT_PARAMETERS.temperature
         };
 
         const response = await fetch(endpoint, {
@@ -80,8 +79,7 @@ export class ChatService {
             model: modelId,
             messages: messagesWithoutMessageType,
             stream: true,
-            temperature: CHAT_PARAMETERS.temperature,
-            max_tokens: 1000
+            temperature: CHAT_PARAMETERS.temperature
         };
 
         const response = await fetch(endpoint, {
