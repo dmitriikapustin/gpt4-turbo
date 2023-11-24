@@ -29,7 +29,8 @@
     "build:css": "postcss src/index.css -o src/tailwind.css",
     "start": "npm run build:css && vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "start-r": "react-scripts start -p 3003"
   },
   "eslintConfig": {
     "extends": [

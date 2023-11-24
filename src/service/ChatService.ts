@@ -33,7 +33,7 @@ export class ChatService {
 
     static async sendMessage(messages: ChatMessage[], modelId: string): Promise<ChatCompletion> {
 
-        let endpoint = "https://api.openai.com/v1/chat/completions";
+        let endpoint = "http://localhost:3000/v1/chat/completions";
         let headers = {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${OPENAI_API_KEY}`
@@ -65,7 +65,7 @@ export class ChatService {
 
 
     static async sendMessageStreamed(messages: ChatMessage[], modelId: string, callback: (content: string) => void): Promise<any> {
-        let endpoint = "https://api.openai.com/v1/chat/completions";
+        let endpoint = "http://localhost:3000/v1/chat/completions";
         let headers = {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${OPENAI_API_KEY}`
@@ -161,7 +161,7 @@ export class ChatService {
         if (this.models !== null) {
             return Promise.resolve(this.models);
         }
-        this.models = fetch('https://api.openai.com/v1/models', {
+        this.models = fetch('http://localhost:3000/v1/models', {
             headers: {
                 'Authorization': `Bearer ${OPENAI_API_KEY}`,
             },
